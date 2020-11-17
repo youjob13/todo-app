@@ -1,0 +1,76 @@
+form {
+  width: 100%;
+}
+.completed-tasks {
+  display: flex;
+}
+.filter {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.input {
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 400;
+  color: #000;
+  margin: 20px 0;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 2px solid #f8f8f8;
+  color: #b0b2b5;
+  width: 90%;
+  height: 40px;
+  background-image: url("../../img/search.png");
+  background-size: 20px;
+  background-position: 96% 50%;
+  background-repeat: no-repeat;
+}
+.input:focus {
+  outline: none;
+}
+.button-new-task {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  background-color: #50e3a4;
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-box-shadow: 0 0 8px #3ec088;
+  box-shadow: 0 0 8px #3ec088;
+  cursor: pointer;
+}
+.button-new-task:hover {
+  -webkit-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+    1px 1px 5px #fff;
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px #fff;
+  -webkit-transform: translate(-50%, 50%) scale(0.9, 0.9);
+  transform: translate(-50%, 50%) scale(0.9, 0.9);
+}
+.button-new-task:focus {
+  outline: none;
+}
+.button-new-task::after,
+.button-new-task::before {
+  content: "";
+  position: absolute;
+  background-color: #46be8b;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.button-new-task::after {
+  width: 4px;
+  height: 30px;
+}
+.button-new-task::before {
+  width: 30px;
+  height: 4px;
+}

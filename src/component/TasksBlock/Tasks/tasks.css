@@ -1,0 +1,25 @@
+.tasks-block {
+  height: 100%;
+}
+.tasks-list {
+  height: 80%;
+  overflow-y: scroll;
+}
+.tasks-list::-webkit-scrollbar {
+  width: 0;
+}
+
+.tasks-list {
+  -ms-overflow-style: none;
+}
+
+.tasks-list {
+  overflow: -moz-scrollbars-none;
+}
+.navigation {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}

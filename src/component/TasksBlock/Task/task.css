@@ -1,0 +1,52 @@
+.task-item {
+  position: relative;
+  width: 100%;
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 400;
+  color: #000;
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr 2fr 2fr;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.active {
+  background-color: red;
+}
+.task-status,
+.task-interaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+.task-text::-webkit-scrollbar {
+  width: 0;
+}
+
+.task-text {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  font-family: sans-serif;
+  resize: none;
+  background-color: #fff;
+  border: none;
+  height: 20px;
+}
+.task-text:focus {
+  outline: none;
+}
+.task-date {
+  text-align: right;
+  border: none;
+  background-color: #fff;
+}
+
+
+

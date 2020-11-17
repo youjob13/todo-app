@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0efe9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-calendar-picker-indicator {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todoList {
+  margin: auto;
+  -webkit-transform: translateY(5%);
+  transform: translateY(5%);
+  background-color: #fff;
+  width: 600px;
+  height: 600px;
+  -webkit-box-shadow: 0 0 15px #cfd3da;
+  box-shadow: 0 0 15px #cfd3da;
+  padding: 50px 45px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.task-checkbox {
+  height: 0;
+  width: 0;
+}
+.task-checkbox + label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  margin: 0.6em 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  color: #000;
+  font-weight: bold;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+.task-checkbox + label > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 1em;
+  width: 1em;
+  height: 1em;
+  background: transparent;
+  border: 2px solid #9e9e9e;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
 }
-
-.App-link {
-  color: #61dafb;
+.task-checkbox + label:hover,
+.task-checkbox:focus + label {
+  color: #808080;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.task-checkbox + label:hover > span,
+.task-checkbox:focus + label > span {
+  background: rgba(255, 255, 255, 0.1);
+}
+.task-checkbox:checked + label > span {
+  border: 0.5em solid #50e3a4;
+  -webkit-animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+  animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+.task-checkbox:checked + label > span:before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0.2em;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1)
+    forwards;
+  animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+}
+@-webkit-keyframes shrink-bounce {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  33% {
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes shrink-bounce {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  33% {
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes checkbox-check {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: #212121;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  33% {
+    width: 0.2em;
+    height: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  100% {
+    width: 0.2em;
+    height: 0.5em;
+    border-color: #212121;
+    -webkit-transform: translate3d(0, -0.5em, 0) rotate(45deg);
+    transform: translate3d(0, -0.5em, 0) rotate(45deg);
+  }
+}
+@keyframes checkbox-check {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: #212121;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  33% {
+    width: 0.2em;
+    height: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  100% {
+    width: 0.2em;
+    height: 0.5em;
+    border-color: #212121;
+    -webkit-transform: translate3d(0, -0.5em, 0) rotate(45deg);
+    transform: translate3d(0, -0.5em, 0) rotate(45deg);
   }
 }

@@ -1,0 +1,17 @@
+.task-edit,
+.task-delete {
+  cursor: pointer;
+  background-image: url(../../img/edit.png);
+  background-size: cover;
+  border: none;
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+}
+.task-edit:focus,
+.task-delete:focus {
+  outline: none;
+}
+.task-delete {
+  background-image: url(../../img/delete.png);
+}
